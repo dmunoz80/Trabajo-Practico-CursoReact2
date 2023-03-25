@@ -28,12 +28,12 @@ const PizzaInfo = () => {
                             </ListGroup.Item>
                         ))}
                     </ListGroup>
-                    <hr />
+                    <hr/>
                     <span className="fw-bold fs-2">
                         Precio: ${pizzaInfo.price}
                     </span>
                     <div className='d-flex flex-row justify-content-around'>
-                        <Button variant="danger" className='fw-bold bg-success border-success' onClick={() => handleClick(pizzaInfo)}>Añadir🛒</Button>
+                        <Button variant="danger" className='fw-bold bg-success border-success' onClick={() => handleClick(pizzaInfo)}>Añadir al carro</Button>
                     </div>
                 </Card.Body>
             </Card>
