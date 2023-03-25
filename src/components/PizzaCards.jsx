@@ -12,7 +12,7 @@ const PizzaCards = () => {
     return (
         <div className="card-container d-flex flex-wrap justify-content-center gap-3">
             {pizzas.map((p) => (
-                < Card key={p.id} style={{ width: '18rem', marginTop: '25px' }}>
+                < Card className='border-success' key={p.id} style={{ width: '18rem', marginTop: '25px' }}>
                     <Card.Img variant="top" src={p.img} alt={p.name} />
                     <Card.Body>
                         <Card.Title className='fs-2 text-center bg-warning' >{(p.name)}</Card.Title>
@@ -32,11 +32,11 @@ const PizzaCards = () => {
                         <div className='d-flex justify-content-around'>
                             <Button
                                 onClick={() => navigate(`/pizza/${p.id}`)}
-                                className='fw-bold bg-warning'>
+                                className='fw-bold bg-warning border-success'>
                                 Ver más
                             </Button>
 
-                            <Button className='fw-bold bg-success' onClick={() => handleClick(p)}>
+                            <Button className='fw-bold bg-success border-success' onClick={() => handleClick(p)}>
                                 Añadir al carro
                             </Button>
                         </div>

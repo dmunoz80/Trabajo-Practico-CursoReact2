@@ -19,7 +19,7 @@ function Nav() {
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
                         <NavLink to='/cart' className='fw-bold' style={{textDecoration: 'none', color: '#fff'}}>
-                            🛒 ${total}
+                            Carrito de compras ${total}
                         </NavLink>
                     </Navbar.Text>
                 </Navbar.Collapse>
