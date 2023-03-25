@@ -10,10 +10,10 @@ const PizzaCards = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="card-container d-flex flex-wrap justify-content-center gap-3">
+        <div className="d-flex flex-wrap justify-content-center gap-3">
             {pizzas.map((p) => (
-                < Card className='border-success' key={p.id} style={{ width: '18rem', marginTop: '25px' }}>
-                    <Card.Img variant="top" src={p.img} alt={p.name} />
+                < Card className='border-success mt-5' key={p.id} style={{ width: '18rem'}}>
+                    <Card.Img src={p.img} alt={p.name} />
                     <Card.Body>
                         <Card.Title className='fs-2 text-center bg-warning' >{(p.name)}</Card.Title>
                         <hr />
