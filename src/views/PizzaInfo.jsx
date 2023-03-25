@@ -12,10 +12,10 @@ const PizzaInfo = () => {
     const pizzaInfo = pizzas.find(pizza => pizza.id.toString() === id);
 
     return (
-        <div className="d-flex flex-wrap justify-content-center">
-            <Card className="d-flex flex-row border-success" style={{width: '90rem', marginTop: '5rem'}}>
-                <Card.Img variant="top" src={pizzaInfo.img} alt={pizzaInfo.name} />
-                <Card.Body>
+        <div className= " d-flex flex-wrap justify-content-center">
+            <Card className="d-flex flex-row border-success mt-5" style={{width: '80rem'}}>
+                <Card.Img src={pizzaInfo.img} alt={pizzaInfo.name} />
+                <Card.Body className="mx-4">
                     <Card.Title className='bg-warning fs-1 text-center'>{(pizzaInfo.name)}</Card.Title>
                     <Card.Text>
                         {pizzaInfo.desc}
