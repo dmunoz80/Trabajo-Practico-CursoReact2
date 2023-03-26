@@ -5,14 +5,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Carrito = () => {
-    const { cart, QuantityDown, QuantityUp, total } = useContext(PizzaContext);
+    const { ShopCart, QuantityDown, QuantityUp, total } = useContext(PizzaContext);
 
     return (
         <div>
             <ListGroup className='d-flex flex-column align-items-center mt-5'>
                 <ListGroup.Item className='bg-warning bg-opacity-50'>
                     <h2>Detalles del pedido:</h2>
-                    {cart.map((p) => (
+                    {ShopCart.map((p) => (
                         <Card key={p.id} className='d-flex flex-row align-items-center mt-2 gap-3' style={{ width: '50rem' }}>
                             <Card.Img src={p.img} alt={p.name} style={{ width: '7rem' }} />
                             <Card.Title className="text-capitalize">{p.name}</Card.Title>

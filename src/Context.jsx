@@ -5,7 +5,7 @@ const PizzaContext = createContext();
 //Creando el provider para los datos
 const ProviderPizza = ({ children }) => {
     const [pizzas, setPizzas] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [ShopCart, setShopCart] = useState([]);
     const [total, setTotal] = useState(0)
 
     //Creando la funcion que obtendra los datos del Json
@@ -30,13 +30,13 @@ const ProviderPizza = ({ children }) => {
 
     //Agregando pizzas al carrito
     const addPizzaToCart = (selectedPizza) => {
-        const index = cart.findIndex(p => p.id === selectedPizza.id);
+        const index = ShopCart.findIndex(p => p.id === selectedPizza.id);
         if (index !== -1) {
-            const updatedPizzas = [...cart];
+            const updatedPizzas = [...ShopCart];
             updatedPizzas[index].quantity += 1;
-            setCart(updatedPizzas);
+            setShopCart(updatedPizzas);
         } else {
-            setCart(pizzas => [...pizzas, { ...selectedPizza, quantity: 1 }]);
+            setShopCart(pizzas => [...pizzas, { ...selectedPizza, quantity: 1 }]);
         }
         setTotal((p) => p + selectedPizza.price)
     }
@@ -47,32 +47,32 @@ const ProviderPizza = ({ children }) => {
 
     //Modificando cantidad en carrito
     const QuantityUp = (id) => {
-        const increment = cart.map((pizza) => {
+        const increment = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity += 1 }
             } else {
                 return pizza;
             }
         })
-        setCart(increment);
+        setShopCart(increment);
         calculateTotal();
     }
 
     const QuantityDown = (id) => {
-        const decrement = cart.map((pizza) => {
+        const decrement = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity -= 1 }
             } else {
                 return pizza
             }
         })
-        setCart(decrement.filter((pizza) => pizza.quantity > 0));
+        setShopCart(decrement.filter((pizza) => pizza.quantity > 0));
         calculateTotal();
     }
 
     //Modificando precios al carrito
     const calculateTotal = () => {
-        const totalPrice = cart.reduce((acc, pizza) => acc + pizza.price * pizza.quantity, 0);
+        const totalPrice = ShopCart.reduce((acc, pizza) => acc + pizza.price * pizza.quantity, 0);
         setTotal(totalPrice);
     }
 
@@ -82,8 +82,8 @@ const ProviderPizza = ({ children }) => {
                 pizzas,
                 setPizzas,
                 handleClick,
-                cart,
-                setCart,
+                ShopCart,
+                setShopCart,
                 QuantityUp,
                 QuantityDown,
                 calculateTotal,

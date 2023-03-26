@@ -20,7 +20,7 @@ function Nav() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <NavLink to='/cart' className='fw-bold text-light text-decoration-none'>
+                        <NavLink to='/ShopCart' className='fw-bold text-light text-decoration-none'>
                         👉Total Carrito de compras: ${total}
                         </NavLink>
                     </Navbar.Text>
