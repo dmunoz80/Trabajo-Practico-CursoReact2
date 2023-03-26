@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from '../img/pizza1.jpg';
 import img2 from '../img/pizza2.jpg';
