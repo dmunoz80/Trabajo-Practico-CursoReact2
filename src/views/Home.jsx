@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-import PizzaCards from "../components/PizzaCards";
+import PizzaCard from "../components/PizzaCard";
 
 const Home = () => {
     return (
         <>
             <Header />
-            <PizzaCards />
+            <PizzaCard />
         </>
     )
 }

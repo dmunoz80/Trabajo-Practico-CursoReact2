@@ -7,7 +7,7 @@ import PizzaContext from '../Context';
 import { ListGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const PizzaCards = () => {
+const PizzaCard = () => {
     const { pizzas, handleClick } = useContext(PizzaContext);
     const navigate = useNavigate();
 
@@ -49,4 +49,4 @@ const PizzaCards = () => {
     )
 }
 
-export default PizzaCards;
+export default PizzaCard;
