@@ -4,7 +4,6 @@ import { ProviderPizza } from "./Context";
 import Home from "./views/Home";
 import PizzaInfo from "./views/PizzaInfo";
 import Cart from "./views/Cart";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
