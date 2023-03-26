@@ -46,7 +46,7 @@ const ProviderPizza = ({ children }) => {
     }
 
     //Modificando cantidad en carrito
-    const incrementQuantity = (id) => {
+    const QuantityUp = (id) => {
         const increment = cart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity += 1 }
@@ -58,7 +58,7 @@ const ProviderPizza = ({ children }) => {
         calculateTotal();
     }
 
-    const decrementQuantity = (id) => {
+    const QuantityDown = (id) => {
         const decrement = cart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity -= 1 }
@@ -84,8 +84,8 @@ const ProviderPizza = ({ children }) => {
                 handleClick,
                 cart,
                 setCart,
-                incrementQuantity,
-                decrementQuantity,
+                QuantityUp,
+                QuantityDown,
                 calculateTotal,
                 total
             }}>

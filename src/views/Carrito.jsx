@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Carrito = () => {
-    const { cart, incrementQuantity, decrementQuantity, total } = useContext(PizzaContext);
+    const { cart, QuantityDown, QuantityUp, total } = useContext(PizzaContext);
 
     return (
         <div>
@@ -17,15 +17,15 @@ const Carrito = () => {
                             <Card.Img src={p.img} alt={p.name} style={{ width: '7rem' }} />
                             <Card.Title className="text-capitalize">{p.name}</Card.Title>
                             <Card.Body>
-                                <div className="d-flex justify-content-end align-items-center">
-                                    <span className='fw-bold mx-1'>
+                                <div className="d-flex justify-content-end align-items-center gap-3">
+                                    <span className='fw-bold'>
                                         ${p.price * p.quantity}
                                     </span>
-                                    <Button className='fw-bold bg-warning border-success' onClick={() => decrementQuantity(p.id)}>-</Button>
-                                    <span className='mx-2 fw-bold'>
+                                    <Button className='fw-bold bg-warning border-success rounded-circle' onClick={() => QuantityDown(p.id)}>-</Button>
+                                    <span className='fw-bold'>
                                         {p.quantity}
                                     </span>
-                                    <Button className='fw-bold bg-success border-success' onClick={() => incrementQuantity(p.id)}>+</Button>
+                                    <Button className='fw-bold bg-success border-success rounded-circle' onClick={() => QuantityUp(p.id)}>+</Button>
                                 </div>
                             </Card.Body>
                         </Card>
