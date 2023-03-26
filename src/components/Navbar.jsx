@@ -10,16 +10,16 @@ function Nav() {
     return (
         <Navbar className='navbar bg-success'>
             <Container>
-                <NavLink to='/' style={{textDecoration: 'none'}}>
-                    <Navbar.Brand className='fw-bold' style={{color: '#fff'}}>
+                <NavLink to='/' className='text-decoration-none'>
+                    <Navbar.Brand className='fw-bold text-light'>
                         🍕Pizzería Mamma Mia!
                     </Navbar.Brand>
                 </NavLink>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        <NavLink to='/cart' className='fw-bold' style={{textDecoration: 'none', color: '#fff'}}>
-                            Total Carrito de compras: ${total}
+                        <NavLink to='/cart' className='fw-bold text-light text-decoration-none'>
+                        👉Total Carrito de compras: ${total}
                         </NavLink>
                     </Navbar.Text>
                 </Navbar.Collapse>

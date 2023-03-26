@@ -15,9 +15,9 @@ const PizzaCards = () => {
                 < Card className='border-success mt-5' key={p.id} style={{ width: '18rem'}}>
                     <Card.Img src={p.img} alt={p.name} />
                     <Card.Body>
-                        <Card.Title className='fs-2 text-center bg-warning' >{(p.name)}</Card.Title>
+                        <Card.Title className='fs-3 text-center text-capitalize bg-warning' >{(p.name)}</Card.Title>
                         <hr />
-                        <h5 className='fw-bold mt-4'>Ingredientes:</h5>
+                        <h5 className='fw-bold mt-4 bg-success text-light'>Ingredientes:</h5>
                         <ListGroup variant='flush'>
                             {p.ingredients.map((ingredients, index) => (
                                 <ListGroup.Item key={`${p.id}-${index}`}>
