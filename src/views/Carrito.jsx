@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Cart = () => {
+const Carrito = () => {
     const { cart, incrementQuantity, decrementQuantity, total } = useContext(PizzaContext);
 
     return (
@@ -39,4 +39,4 @@ const Cart = () => {
     )
 }
 
-export default Cart;
+export default Carrito;
