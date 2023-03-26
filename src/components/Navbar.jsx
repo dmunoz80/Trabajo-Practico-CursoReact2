@@ -12,7 +12,7 @@ function Nav() {
             <Container>
                 <NavLink to='/' className='text-decoration-none'>
                     <Navbar.Brand className='fw-bold text-light'>
-                        🍕Pizzería Mamma Mia!
+                        🍕¡Pizzería Mamma Mia!
                     </Navbar.Brand>
                 </NavLink>
                 <Navbar.Toggle />

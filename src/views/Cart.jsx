@@ -10,7 +10,7 @@ const Cart = () => {
     return (
         <div>
             <ListGroup className='d-flex flex-column align-items-center mt-5'>
-                <ListGroup.Item className='bg-light'>
+                <ListGroup.Item className='bg-warning bg-opacity-50'>
                     <h2>Detalles del pedido:</h2>
                     {cart.map((p) => (
                         <Card key={p.id} className='d-flex flex-row align-items-center mt-2 gap-3' style={{ width: '60rem' }}>
