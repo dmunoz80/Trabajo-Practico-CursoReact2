@@ -13,7 +13,7 @@ const Carrito = () => {
                 <ListGroup.Item className='bg-warning bg-opacity-50'>
                     <h2>Detalles del pedido:</h2>
                     {cart.map((p) => (
-                        <Card key={p.id} className='d-flex flex-row align-items-center mt-2 gap-3' style={{ width: '60rem' }}>
+                        <Card key={p.id} className='d-flex flex-row align-items-center mt-2 gap-3' style={{ width: '50rem' }}>
                             <Card.Img src={p.img} alt={p.name} style={{ width: '7rem' }} />
                             <Card.Title className="text-capitalize">{p.name}</Card.Title>
                             <Card.Body>
