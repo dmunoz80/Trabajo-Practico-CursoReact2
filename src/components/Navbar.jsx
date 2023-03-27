@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import PizzaContext from '../Context';
+import Context from '../Context';
 
 function Nav() {
-    const { total } = useContext(PizzaContext);
+    const { total } = useContext(Context);
 
     return (
         <Navbar className='navbar bg-success'>

@@ -1,14 +1,14 @@
 import React, { createContext, useEffect, useState } from "react";
-//Creando el contexto
+
 const Context = createContext();
 
-//Creando el provider para los datos
+
 const ProviderPizza = ({ children }) => {
     const [pizzas, setPizzas] = useState([]);
     const [ShopCart, setShopCart] = useState([]);
     const [total, setTotal] = useState(0)
 
-    //Creando la funcion que obtendra los datos del Json
+
     const getPizzas = async () => {
         const res = await fetch('/pizzas.json');
         const data = await res.json();
@@ -70,7 +70,7 @@ const ProviderPizza = ({ children }) => {
         calculateTotal();
     }
 
-    //Modificando precios al carrito
+    //suma o resta precios al carrito
     const calculateTotal = () => {
         const totalPrice = ShopCart.reduce((acc, pizza) => acc + pizza.price * pizza.quantity, 0);
         setTotal(totalPrice);

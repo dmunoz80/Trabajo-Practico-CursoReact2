@@ -3,12 +3,12 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useContext } from 'react';
-import PizzaContext from '../Context';
+import Context from '../Context';
 import { ListGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const PizzaCard = () => {
-    const { pizzas, handleClick } = useContext(PizzaContext);
+    const { pizzas, handleClick } = useContext(Context);
     const navigate = useNavigate();
 
     return (
