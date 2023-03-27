@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import PizzaContext from "../Context";
+import Context from "../Context";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Carrito = () => {
-    const { ShopCart, QuantityDown, QuantityUp, total } = useContext(PizzaContext);
+    const { ShopCart, AddItem, SubtractItem, total } = useContext(Context);
 
     return (
         <div>
@@ -21,11 +21,11 @@ const Carrito = () => {
                                     <span className='fw-bold'>
                                         ${p.price * p.quantity}
                                     </span>
-                                    <Button className='fw-bold bg-warning border-success rounded-circle' onClick={() => QuantityDown(p.id)}>-</Button>
+                                    <Button className='fw-bold bg-warning border-success rounded-circle' onClick={() => SubtractItem(p.id)}>-</Button>
                                     <span className='fw-bold'>
                                         {p.quantity}
                                     </span>
-                                    <Button className='fw-bold bg-success border-success rounded-circle' onClick={() => QuantityUp(p.id)}>+</Button>
+                                    <Button className='fw-bold bg-success border-success rounded-circle' onClick={() => AddItem(p.id)}>+</Button>
                                 </div>
                             </Card.Body>
                         </Card>

@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { useParams} from "react-router-dom";
 import { ListGroup } from 'react-bootstrap';
-import PizzaContext from "../Context";
+import Context from "../Context";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const PizzaInfo = () => {
     const { id } = useParams();
-    const { pizzas, handleClick } = useContext(PizzaContext);
+    const { pizzas, handleClick } = useContext(Context);
 
     const pizzaInfo = pizzas.find(pizza => pizza.id.toString() === id);
 

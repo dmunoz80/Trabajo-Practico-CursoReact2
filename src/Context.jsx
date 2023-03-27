@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 //Creando el contexto
-const PizzaContext = createContext();
+const Context = createContext();
 
 //Creando el provider para los datos
 const ProviderPizza = ({ children }) => {
@@ -29,7 +29,7 @@ const ProviderPizza = ({ children }) => {
     }, []);
 
     //Agregando pizzas al carrito
-    const addPizzaToCart = (selectedPizza) => {
+    const addPizza = (selectedPizza) => {
         const index = ShopCart.findIndex(p => p.id === selectedPizza.id);
         if (index !== -1) {
             const updatedPizzas = [...ShopCart];
@@ -42,11 +42,11 @@ const ProviderPizza = ({ children }) => {
     }
 
     const handleClick = (selectedPizza) => {
-        addPizzaToCart(selectedPizza)
+        addPizza(selectedPizza)
     }
 
     //Modificando cantidad en carrito
-    const QuantityUp = (id) => {
+    const AddItem = (id) => {
         const increment = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity += 1 }
@@ -58,7 +58,7 @@ const ProviderPizza = ({ children }) => {
         calculateTotal();
     }
 
-    const QuantityDown = (id) => {
+    const SubtractItem = (id) => {
         const decrement = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity -= 1 }
@@ -77,22 +77,22 @@ const ProviderPizza = ({ children }) => {
     }
 
     return (
-        <PizzaContext.Provider value={
+        <Context.Provider value={
             {
                 pizzas,
                 setPizzas,
                 handleClick,
                 ShopCart,
                 setShopCart,
-                QuantityUp,
-                QuantityDown,
+                AddItem,
+                SubtractItem,
                 calculateTotal,
                 total
             }}>
             {children}
-        </PizzaContext.Provider>
+        </Context.Provider>
     )
 }
 
 export { ProviderPizza }
-export default PizzaContext;
+export default Context;
