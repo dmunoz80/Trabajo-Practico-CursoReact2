@@ -5,7 +5,7 @@ import Context from "../Context";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const PizzaInfo = () => {
+const PizzaDetail = () => {
     const { id } = useParams();
     const { pizzas, handleClick } = useContext(Context);
 
@@ -41,4 +41,4 @@ const PizzaInfo = () => {
     )
 }
 
-export default PizzaInfo;
+export default PizzaDetail;

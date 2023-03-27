@@ -28,8 +28,8 @@ const ProviderPizza = ({ children }) => {
         getPizzas()
     }, []);
 
-    //Agregando pizzas al carrito
-    const addPizza = (selectedPizza) => {
+    //Agregar Pizzas al carro de compras en Home
+    const addToCart = (selectedPizza) => {
         const index = ShopCart.findIndex(p => p.id === selectedPizza.id);
         if (index !== -1) {
             const updatedPizzas = [...ShopCart];
@@ -42,10 +42,10 @@ const ProviderPizza = ({ children }) => {
     }
 
     const handleClick = (selectedPizza) => {
-        addPizza(selectedPizza)
+        addToCart(selectedPizza)
     }
 
-    //Modificando cantidad en carrito
+    //Suma o resta de Items al carro de compras
     const AddItem = (id) => {
         const increment = ShopCart.map((pizza) => {
             if (pizza.id === id) {

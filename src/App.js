@@ -6,6 +6,7 @@ import Pizza from "./views/Pizza";
 import Carrito from "./views/Carrito";
 
 function App() {
+  
   return (
     <div className="App">
       <ProviderPizza>
