@@ -13,32 +13,32 @@ const PizzaCard = () => {
 
     return (
         <div className="d-flex flex-wrap justify-content-center gap-3">
-            {pizzas.map((p) => (
-                < Card className='border-success mt-5' key={p.id} style={{ width: '18rem'}}>
-                    <Card.Img src={p.img} alt={p.name} />
+            {pizzas.map((e) => (
+                < Card className='border-success mt-5' key={e.id} style={{ width: '18rem'}}>
+                    <Card.Img src={e.img} alt={e.name} />
                     <Card.Body>
-                        <Card.Title className='fs-3 text-center text-capitalize bg-warning' >{(p.name)}</Card.Title>
+                        <Card.Title className='fs-3 text-center text-capitalize bg-warning' >{(e.name)}</Card.Title>
                         <hr />
                         <h5 className='fw-bold mt-4 bg-success text-light'>Ingredientes:</h5>
                         <ListGroup variant='flush'>
-                            {p.ingredients.map((ingredients, index) => (
-                                <ListGroup.Item key={`${p.id}-${index}`}>
+                            {e.ingredients.map((ingredients, index) => (
+                                <ListGroup.Item key={`${e.id}-${index}`}>
                                     🍕{ingredients}
                                 </ListGroup.Item>
                             ))}
                         </ListGroup>
                         <hr />
                         <h3 className='fw-bold text-center'>
-                            Precio: ${p.price}
+                            Precio: ${e.price}
                         </h3>
                         <div className='d-flex justify-content-around'>
                             <Button
-                                onClick={() => navigate(`/pizza/${p.id}`)}
+                                onClick={() => navigate(`/pizza/${e.id}`)}
                                 className='fw-bold bg-warning border-success'>
                                 Ver más
                             </Button>
 
-                            <Button className='fw-bold bg-success border-success' onClick={() => handleClick(p)}>
+                            <Button className='fw-bold bg-success border-success' onClick={() => handleClick(e)}>
                                 Añadir al carro
                             </Button>
                         </div>

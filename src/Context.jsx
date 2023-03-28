@@ -9,28 +9,28 @@ const GeneralProvider = ({ children }) => {
     const [total, setTotal] = useState(0)
 
 
-    const getPizzas = async () => {
+    const dataPizza = async () => {
         const res = await fetch('/pizzas.json');
         const data = await res.json();
-        const newData = data.map((p) => ({
-            desc: p.desc,
-            id: p.id,
-            img: p.img,
-            ingredients: p.ingredients,
-            name: p.name,
-            price: p.price,
+        const newData = data.map((e) => ({
+            desc: e.desc,
+            id: e.id,
+            img: e.img,
+            ingredients: e.ingredients,
+            name: e.name,
+            price: e.price,
             quantity: 1
         }))
         setPizzas(newData);
     }
 
     useEffect(() => {
-        getPizzas()
+        dataPizza()
     }, []);
 
     //Agregar Pizzas al carro de compras en Home
     const addToCart = (selectedPizza) => {
-        const index = ShopCart.findIndex(p => p.id === selectedPizza.id);
+        const index = ShopCart.findIndex(e => e.id === selectedPizza.id);
         if (index !== -1) {
             const updatedPizzas = [...ShopCart];
             updatedPizzas[index].quantity += 1;
@@ -38,7 +38,7 @@ const GeneralProvider = ({ children }) => {
         } else {
             setShopCart(pizzas => [...pizzas, { ...selectedPizza, quantity: 1 }]);
         }
-        setTotal((p) => p + selectedPizza.price)
+        setTotal((e) => e + selectedPizza.price)
     }
 
     const handleClick = (selectedPizza) => {
