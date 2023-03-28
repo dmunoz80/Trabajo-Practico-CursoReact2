@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 const Context = createContext();
 
 
-const ProviderPizza = ({ children }) => {
+const GeneralProvider = ({ children }) => {
     const [pizzas, setPizzas] = useState([]);
     const [ShopCart, setShopCart] = useState([]);
     const [total, setTotal] = useState(0)
@@ -94,5 +94,5 @@ const ProviderPizza = ({ children }) => {
     )
 }
 
-export { ProviderPizza }
+export { GeneralProvider }
 export default Context;

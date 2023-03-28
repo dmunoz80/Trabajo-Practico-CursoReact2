@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { ProviderPizza } from "./Context";
+import { GeneralProvider } from "./Context";
 import Home from "./views/Home";
 import Pizza from "./views/Pizza";
 import Carrito from "./views/Carrito";
@@ -9,7 +9,7 @@ function App() {
   
   return (
     <div className="App">
-      <ProviderPizza>
+      <GeneralProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -18,7 +18,7 @@ function App() {
             <Route path="/ShopCart" element={<Carrito />} />
           </Routes>
         </BrowserRouter>
-      </ProviderPizza>
+      </GeneralProvider>
     </div>
   );
 }

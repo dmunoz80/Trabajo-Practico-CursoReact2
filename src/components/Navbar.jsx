@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import Context from '../Context';
 
+
+
 function Nav() {
     const { total } = useContext(Context);
 
