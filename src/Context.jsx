@@ -47,31 +47,31 @@ const GeneralProvider = ({ children }) => {
 
     //Suma o resta de Items al carro de compras
     const AddItem = (id) => {
-        const increment = ShopCart.map((pizza) => {
+        const pizzaUp = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity += 1 }
             } else {
                 return pizza;
             }
         })
-        setShopCart(increment);
-        calculateTotal();
+        setShopCart(pizzaUp);
+        priceTotal();
     }
 
     const SubtractItem = (id) => {
-        const decrement = ShopCart.map((pizza) => {
+        const pizzaDown = ShopCart.map((pizza) => {
             if (pizza.id === id) {
                 return { ...pizza, quantity: pizza.quantity -= 1 }
             } else {
                 return pizza
             }
         })
-        setShopCart(decrement.filter((pizza) => pizza.quantity > 0));
-        calculateTotal();
+        setShopCart(pizzaDown.filter((pizza) => pizza.quantity > 0));
+        priceTotal();
     }
 
     //suma o resta precios al carrito
-    const calculateTotal = () => {
+    const priceTotal = () => {
         const totalPrice = ShopCart.reduce((acc, pizza) => acc + pizza.price * pizza.quantity, 0);
         setTotal(totalPrice);
     }
@@ -86,7 +86,7 @@ const GeneralProvider = ({ children }) => {
                 setShopCart,
                 AddItem,
                 SubtractItem,
-                calculateTotal,
+                priceTotal,
                 total
             }}>
             {children}
